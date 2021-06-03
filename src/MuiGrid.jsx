@@ -1,14 +1,24 @@
 import { XGrid } from '@material-ui/x-grid'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { columns } from './columns'
+import { FPS, Scroller } from './utils.js'
 
-const MuiGrid = ({ data }) => {
+const MuiGrid = ({ data, pagination }) => {
     const start = performance.now()
-    console.log(start)
 
     useEffect(() => {
-        console.log(performance.now() - start)
+        console.log('MuiGrid loaded in', performance.now() - start, 'ms')
     }, [])
+
+    const performScrollTest = () => {
+        FPS.start()
+        Scroller.scroll({
+            element: document.querySelector('.MuiDataGrid-window'),
+            callback() {
+                FPS.stop()
+            },
+        })
+    }
 
     return (
         <div style={{ height: '100vh', width: '100vw' }}>
@@ -17,7 +27,25 @@ const MuiGrid = ({ data }) => {
                 columns={columns}
                 loading={data.objects.length === 0}
                 rowHeight={38}
+                pagination={pagination}
+                hideFooter={!pagination}
             />
+            <div
+                style={{
+                    position: 'absolute',
+                    bottom: '40px',
+                    right: '40px',
+                    padding: '10px',
+                    backgroundColor: 'black',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '10px',
+                }}
+            >
+                <button type="button" onClick={performScrollTest}>
+                    Scroll test
+                </button>
+            </div>
         </div>
     )
 }
