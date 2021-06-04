@@ -3,10 +3,11 @@
     "version": "0.1.0",
     "private": true,
     "engines": {
-        "node": "16.x"
+        "node": "14.x"
     },
     "dependencies": {
         "@material-ui/core": "^4.11.4",
+        "@material-ui/data-grid": "^4.0.0-alpha.30",
         "@material-ui/x-grid": "^4.0.0-alpha.29",
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.1.0",

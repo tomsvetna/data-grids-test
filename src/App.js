@@ -4,7 +4,8 @@ import Nav from './Nav'
 import data from './data.json'
 import Results from './Results'
 
-const MuiGrid = lazy(() => import('./MuiGrid'))
+const MuiDataGrid = lazy(() => import('./MuiDataGrid'))
+const MuiXGrid = lazy(() => import('./MuiXGrid'))
 const AgGrid = lazy(() => import('./AgGrid'))
 
 const App = () => (
@@ -12,8 +13,9 @@ const App = () => (
         <BrowserRouter>
             <Routes>
                 <Route element={<Nav />} path="/" />
-                <Route element={<MuiGrid data={data} />} path="/muigrid" />
-                <Route element={<MuiGrid data={data} pagination />} path="/muigrid-paged" />
+                <Route element={<MuiDataGrid data={data} />} path="/muidatagrid" />
+                <Route element={<MuiXGrid data={data} />} path="/muixgrid" />
+                <Route element={<MuiXGrid data={data} pagination />} path="/muixgrid-paged" />
                 <Route element={<AgGrid data={data} />} path="/aggrid" />
                 <Route element={<AgGrid data={data} pagination />} path="/aggrid-paged" />
                 <Route element={<Results />} path="/results" />

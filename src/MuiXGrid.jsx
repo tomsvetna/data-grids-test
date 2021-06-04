@@ -1,13 +1,13 @@
 import { XGrid } from '@material-ui/x-grid'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { columns } from './columns'
 import { FPS, Scroller } from './utils.js'
 
-const MuiGrid = ({ data, pagination }) => {
+const MuiXGrid = ({ data, pagination }) => {
     const start = performance.now()
 
     useEffect(() => {
-        console.log('MuiGrid loaded in', performance.now() - start, 'ms')
+        console.log('MuiXGrid loaded in', performance.now() - start, 'ms')
     }, [])
 
     const performScrollTest = () => {
@@ -50,4 +50,4 @@ const MuiGrid = ({ data, pagination }) => {
     )
 }
 
-export default MuiGrid
+export default MuiXGrid

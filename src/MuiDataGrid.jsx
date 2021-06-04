@@ -1,21 +1,19 @@
-import { AgGridColumn, AgGridReact } from 'ag-grid-react'
+import { DataGrid } from '@material-ui/data-grid'
 import React, { useEffect } from 'react'
 import { columns } from './columns'
-import 'ag-grid-community/dist/styles/ag-grid.css'
-import 'ag-grid-community/dist/styles/ag-theme-alpine.css'
-import { FPS, Scroller } from './utils'
+import { FPS, Scroller } from './utils.js'
 
-const AgGrid = ({ data, pagination }) => {
+const MuiDataGrid = ({ data }) => {
     const start = performance.now()
 
     useEffect(() => {
-        console.log('AgGrid loaded in', performance.now() - start, 'ms')
+        console.log('MuiDataGrid loaded in', performance.now() - start, 'ms')
     }, [])
 
     const performScrollTest = () => {
         FPS.start()
         Scroller.scroll({
-            element: document.querySelector('.ag-body-viewport'),
+            element: document.querySelector('.MuiDataGrid-window'),
             callback() {
                 FPS.stop()
             },
@@ -23,17 +21,13 @@ const AgGrid = ({ data, pagination }) => {
     }
 
     return (
-        <div className="ag-theme-alpine" style={{ height: '100vh', width: '100vw' }}>
-            <AgGridReact
-                rowData={data.objects}
+        <div style={{ height: '100vh', width: '100vw' }}>
+            <DataGrid
+                rows={data.objects}
+                columns={columns}
+                loading={data.objects.length === 0}
                 rowHeight={38}
-                colWidth={100}
-                pagination={pagination}
-            >
-                {columns.map(({ field }) => (
-                    <AgGridColumn key={field} field={field} sortable filter />
-                ))}
-            </AgGridReact>
+            />
             <div
                 style={{
                     position: 'absolute',
@@ -54,4 +48,4 @@ const AgGrid = ({ data, pagination }) => {
     )
 }
 
-export default AgGrid
+export default MuiDataGrid

@@ -7,12 +7,13 @@ const Nav = () => (
             display: 'flex',
             flexDirection: 'column',
             padding: '42px',
-            height: '140px',
+            height: '180px',
             justifyContent: 'space-between',
         }}
     >
-        <Link to="/muigrid">MuiGrid</Link>
-        <Link to="/muigrid-paged">MuiGrid paged</Link>
+        <Link to="/muidatagrid">MuiDataGrid</Link>
+        <Link to="/muixgrid">MuiXGrid</Link>
+        <Link to="/muixgrid-paged">MuiXGrid paged</Link>
         <Link to="/aggrid">AgGrid</Link>
         <Link to="/aggrid-paged">AgGrid paged</Link>
         <Link to="/results">Results</Link>
