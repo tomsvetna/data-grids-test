@@ -11,7 +11,7 @@ const Nav = () => (
             justifyContent: 'space-between',
         }}
     >
-        <Link to="/muidatagrid">MuiDataGrid</Link>
+        <Link to="/muidatagrid">MuiDataGrid paged</Link>
         <Link to="/muixgrid">MuiXGrid</Link>
         <Link to="/muixgrid-paged">MuiXGrid paged</Link>
         <Link to="/aggrid">AgGrid</Link>
