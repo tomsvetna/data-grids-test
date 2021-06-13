@@ -27,7 +27,7 @@ const DevExtremeGrid = ({ data, pagination }) => {
     const performScrollTest = () => {
         FPS.start()
         Scroller.scroll({
-            element: document.querySelector('.TableContainer-root-2'),
+            element: document.querySelector('.jss2'),
             callback() {
                 FPS.stop()
             },
