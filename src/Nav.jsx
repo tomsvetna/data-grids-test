@@ -7,7 +7,7 @@ const Nav = () => (
             display: 'flex',
             flexDirection: 'column',
             padding: '42px',
-            height: '180px',
+            height: '360px',
             justifyContent: 'space-between',
         }}
     >
@@ -16,6 +16,10 @@ const Nav = () => (
         <Link to="/muixgrid-paged">MuiXGrid paged</Link>
         <Link to="/aggrid">AgGrid</Link>
         <Link to="/aggrid-paged">AgGrid paged</Link>
+        <Link to="/devextremegrid">DevExtremeGrid</Link>
+        <Link to="/devextremegrid-paged">DevExtremeGrid-paged</Link>
+        <Link to="/reactdatagrid">ReactDataGrid</Link>
+        <Link to="/reactdatagrid-paged">ReactDataGrid-paged</Link>
         <Link to="/results">Results</Link>
     </div>
 )
