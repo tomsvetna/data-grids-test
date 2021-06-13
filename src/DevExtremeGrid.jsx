@@ -40,6 +40,8 @@ const DevExtremeGrid = ({ data, pagination }) => {
     return (
         <div style={{ height: '100vh', width: '100vw' }}>
             <Grid rows={data.objects} columns={columns} getRowId={getRowId} rootComponent={Root}>
+                {pagination && <PagingState defaultCurrentPage={0} pageSize={100} />}
+                {pagination && <IntegratedPaging />}
                 <FilteringState defaultFilters={[]} />
                 <IntegratedFiltering />
                 <SortingState />
@@ -47,8 +49,6 @@ const DevExtremeGrid = ({ data, pagination }) => {
                 <VirtualTable height="auto" />
                 <TableHeaderRow showSortingControls />
                 <TableFilterRow />
-                {pagination && <PagingState defaultCurrentPage={0} pageSize={100} />}
-                {pagination && <IntegratedPaging />}
                 {pagination && <PagingPanel />}
             </Grid>
             <div
